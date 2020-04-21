@@ -1,0 +1,17 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{3F51DE62-43DA-154B-4E34-79844F879B16}",
+	"Category": "",
+	"Description": "",
+	"Plugins": [
+		{
+			"Name": "QuestHands",
+			"Enabled": true
+		}
+	],
+	"TargetPlatforms": [
+		"Android",
+		"AllDesktop",
+		"WindowsNoEditor"
+	]
+}
