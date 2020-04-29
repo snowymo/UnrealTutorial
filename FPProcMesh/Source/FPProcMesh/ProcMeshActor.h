@@ -29,9 +29,13 @@ public:
 	/* Creates a triangle that connects the given vertices */
 	void AddTriangle(int32 V1, int32 V2, int32 V3);
 
+	void GeneratePoints();
 	void GenerateCubeMesh();
 
 	void UpdateCubeMesh(const FRotator& rot, const FVector& vec);
+
+	void CreateMeshWithDiagonal(FVector startPt, FVector endPt);
+	void UpdateMeshWithDiagonal(FVector startPt, FVector endPt);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		UProceduralMeshComponent* CustomMesh;

@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "ProcMeshActor.h"
+#include <algorithm>
 
 
 // Sets default values
@@ -28,13 +29,8 @@ void AProcMeshActor::AddTriangle(int32 V1, int32 V2, int32 V3)
 	Triangles.Add(V3);	
 }
 
-void AProcMeshActor::GenerateCubeMesh()
+void AProcMeshActor::GeneratePoints()
 {
-	// locate where to place cube
-	
-
-	//6 sides on cube, 4 verts each (corners)
-
 	//These are relative locations to the placed Actor in the world
 	Vertices.Add(FVector(0, -100, 0)); //lower left - 0
 	Vertices.Add(FVector(0, -100, 100)); //upper left - 1
@@ -46,6 +42,14 @@ void AProcMeshActor::GenerateCubeMesh()
 
 	Vertices.Add(FVector(100, 100, 100)); //upper front right - 6
 	Vertices.Add(FVector(100, 100, 0)); //lower front right - 7
+}
+
+void AProcMeshActor::GenerateCubeMesh()
+{
+	// locate where to place cube
+	GeneratePoints();	
+
+	//6 sides on cube, 4 verts each (corners)	
 
 	//Back face of cube
 	AddTriangle(0, 2, 3);
@@ -96,12 +100,54 @@ void AProcMeshActor::UpdateCubeMesh(const FRotator& rot, const FVector& vec)
 	CustomMesh->UpdateMeshSection(0, Vertices, TArray<FVector>(), TArray<FVector2D>(), TArray<FColor>(), TArray<FProcMeshTangent>());
 }
 
+void AProcMeshActor::CreateMeshWithDiagonal(FVector startPt, FVector endPt)
+{
+	FVector delta = endPt - startPt;
+	delta.Z = std::max(10.0f, delta.Z);
+	delta.X = std::max(1.0f, delta.X);
+	delta.Y = std::max(1.0f, delta.Y);
+
+	//These are relative locations to the placed Actor in the world
+	Vertices.Add(startPt + FVector(delta.X, 0, 0)); //lower left - 0
+	Vertices.Add(startPt + FVector(delta.X, 0, delta.Z));//upper left - 1
+	Vertices.Add(startPt + FVector(delta.X, delta.Y, 0)); //lower right - 2 
+	Vertices.Add(startPt + FVector(delta.X, delta.Y, delta.Z)); //upper right - 3
+
+	Vertices.Add(startPt);  //lower front left - 4
+	Vertices.Add(startPt + FVector(0, 0, delta.Z)); //upper front left - 5
+
+	Vertices.Add(startPt + FVector(0, delta.Y, delta.Z)); //upper front right - 6
+	Vertices.Add(startPt + FVector(0, delta.Y, 0)); //lower front right - 7
+}
+
+void AProcMeshActor::UpdateMeshWithDiagonal(FVector startPt, FVector endPt)
+{
+	// endpoint is changing
+	FVector delta = endPt - startPt;
+	delta.Z = std::max(10.0f, delta.Z);
+	delta.X = std::max(1.0f, delta.X);
+	delta.Y = std::max(1.0f, delta.Y);
+
+	//These are relative locations to the placed Actor in the world
+	Vertices[0] = (startPt + FVector(delta.X, 0, 0)); //lower left - 0
+	Vertices[1] = (startPt + FVector(delta.X, 0, delta.Z));//upper left - 1
+	Vertices[2] = (startPt + FVector(delta.X, delta.Y, 0)); //lower right - 2 
+	Vertices[3] = (startPt + FVector(delta.X, delta.Y, delta.Z)); //upper right - 3
+
+	Vertices[4] = (startPt);  //lower front left - 4
+	Vertices[5] = (startPt + FVector(0, 0, delta.Z)); //upper front left - 5
+	Vertices[6] =(startPt + FVector(0, delta.Y, delta.Z)); //upper front right - 6
+	Vertices[7] = (startPt + FVector(0, delta.Y, 0)); //lower front right - 7
+
+}
+
 // Called when the game starts or when spawned
 void AProcMeshActor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GenerateCubeMesh();
+// 	GeneratePoints();
+// 	GenerateCubeMesh();
 	
 }
 

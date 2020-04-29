@@ -147,6 +147,7 @@ void AFPProcMeshCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 
 void AFPProcMeshCharacter::OnFire()
 {
+	return;
 	// try and fire a projectile
 	if (ProjectileClass != NULL)
 	{
