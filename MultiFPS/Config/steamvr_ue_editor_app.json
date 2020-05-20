@@ -1,0 +1,18 @@
+{
+	"source": "UE",
+	"applications": [
+		{
+			"app_key": "application.generated.ue.multifps-13144385.ue4editor.exe",
+			"launch_type": "url",
+			"url": "steam://launch/",
+			"action_manifest_path": "C:/Users/FRL/Documents/Zhenyi/UnrealTutorial/MultiFPS/Config/SteamVRBindings/steamvr_manifest.json",
+			"strings":
+			{
+				"en_us":
+				{
+					"name": "MultiFPS-13144385 [UE Editor]"
+				}
+			}
+		}
+	]
+}
