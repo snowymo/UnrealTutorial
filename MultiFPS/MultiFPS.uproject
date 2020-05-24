@@ -7,16 +7,23 @@
 		{
 			"Name": "MultiFPS",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	],
 	"Plugins": [
 		{
-			"Name": "OculusAudio",
+			"Name": "SoundUtilities",
 			"Enabled": true
 		},
 		{
-			"Name": "SoundUtilities",
+			"Name": "AdvancedSessions",
+			"Enabled": true
+		},
+		{
+			"Name": "AdvancedSteamSessions",
 			"Enabled": true
 		}
 	]
