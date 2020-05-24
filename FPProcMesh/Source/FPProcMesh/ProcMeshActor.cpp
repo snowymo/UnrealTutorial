@@ -47,7 +47,7 @@ void AProcMeshActor::GeneratePoints()
 void AProcMeshActor::GenerateCubeMesh()
 {
 	// locate where to place cube
-	GeneratePoints();	
+	//GeneratePoints();	
 
 	//6 sides on cube, 4 verts each (corners)	
 
