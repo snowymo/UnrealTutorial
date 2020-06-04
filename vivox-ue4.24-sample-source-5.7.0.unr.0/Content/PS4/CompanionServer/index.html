@@ -1,0 +1,97 @@
+﻿<html>
+<title>ShooterGame</title>
+<script type="text/javascript">
+<!--
+    var httpObj = null;
+
+    function $(tagId) {
+        return document.getElementById(tagId);
+    }
+
+    function init() {
+        updateStatsProc();
+        setInterval('updateStatsProc()', 1000);
+    }
+
+    function updateStatsProc() {
+        if (!httpObj) {
+            getStats();
+        }
+    }
+
+    function updateStats(params)
+    {
+		var Scores = params["scoreboard"];
+
+		while (scoreboard.rows.length > 0)
+		{
+			scoreboard.deleteRow(scoreboard.rows.length - 1);
+		}
+		
+		for(var i=0;i < Scores.length; i++)
+		{
+			var Score = Scores[i];
+
+			var NewRow = scoreboard.insertRow(scoreboard.rows.length);
+			var NameCell = NewRow.insertCell(0);
+			var KillsCell = NewRow.insertCell(1);
+			var DeathsCell = NewRow.insertCell(2);
+			
+			NameCell.innerText = Score["n"];
+			KillsCell.innerText = Score["k"];
+			DeathsCell.innerText = Score["d"];
+		}	
+    }
+
+    function getStats()
+    {
+//        var param = eval("( { scoreboard : [ { \"n\" : \"Test\" , \"k\" : \"30\" , \"d\" : \"10\" } , { \"n\" : \"Test2\" , \"k\" : \"30\" , \"d\" : \"10\" } ] } )");
+//			updateStats(param);
+        httpObj = createXMLHttpRequest(displayResult);
+
+        if (httpObj)
+        {
+            httpObj.open("GET", "/index.html?scoreboard", true);
+            httpObj.send(null);
+        }
+    }
+
+    function displayResult()
+    {
+        if ((httpObj.readyState == 4) && (httpObj.status == 200))
+        {
+//			$('inputtext').value = httpObj.responseText;
+
+		var param = eval("(" + httpObj.responseText + ")");
+            updateStats(param);
+            httpObj = null;
+        }
+    }
+
+    function sendConsoleCommandInner(command)
+    {
+        var request = createXMLHttpRequest(null);
+        if (request) {
+            request.open("POST", "/console.cgi", true);
+            request.send(command);
+        }
+    }
+
+    function sendConsoleCommand()
+    {
+        var Command = $('inputtext').value;
+        sendConsoleCommandInner(Command);
+    }
+// -->
+</script>
+<script src="./request.js"></script>
+<body onload="init()">
+<h2 align="center">ShooterGame Scoreboard</h1>
+<table id = "scoreboard" style="font-size: 100%;" align= "center" width="100%" border="1" cellpadding="5" cellspacing="0">
+</table>
+<!--
+    <input type="search" id="inputtext" style="font-size: 100%;" value="stat detailed" />
+	<input type="button" value="Submit" style="font-size: 100%;border: 3px #85B9E9 double;" onClick="javascript:sendConsoleCommand();" />
+// -->
+</body>
+</html>

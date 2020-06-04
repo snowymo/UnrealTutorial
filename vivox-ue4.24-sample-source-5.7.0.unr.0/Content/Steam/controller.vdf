@@ -1,0 +1,57 @@
+"In Game Actions"
+{
+	"actions"
+	{
+		"InGame"
+		{
+			"title"					"#Set_InGame"
+			"StickPadGyro"
+			{
+				"Move"
+				{
+					"title"			"#Action_Move"
+					"input_mode"	"joystick_move"
+				}
+				"Turn"
+				{
+					"title"			"#Action_Turn"
+					"input_mode"	"absolute_mouse"
+				}
+			}
+			"AnalogTrigger"
+			{
+			}
+			"Button"
+			{
+				"Fire"				"#Action_Fire"
+				"Targeting"			"#Action_Targeting"
+				"InGameMenu"		"#Action_InGameMenu"
+				"Scoreboard"		"#Action_Scoreboard"
+				"NextWeapon"		"#Action_NextWeapon"
+				"PrevWeapon"		"#Action_PrevWeapon"
+				"Reload"			"#Action_Reload"
+				"RunToggle"			"#Action_RunToggle"
+				"Jump"				"#Action_Jump"
+			}
+		}
+	}
+	"localization"
+	{
+		"english"
+		{
+			"Set_InGame"			"In Game"
+
+			"Action_InGameMenu"		"In Game Menu"
+			"Action_Scoreboard"		"Scoreboard"
+			"Action_Fire"			"Fire"
+			"Action_NextWeapon"		"Next Weapon"
+			"Action_PrevWeapon"		"Prev Weapon"
+			"Action_Reload"			"Reload"
+			"Action_RunToggle"		"Run Toggle"
+			"Action_Jump"			"Jump"
+			"Action_Move"			"Move"
+			"Action_Turn"			"Turn"
+			"Action_Targeting"		"Targeting"
+		}
+	}
+}

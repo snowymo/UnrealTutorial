@@ -1,0 +1,8 @@
+FileVersion:1
+Type:Static
+
+/Game/Blueprints/Weapons/ProjRocket.ProjRocket
+/Game/Effects/ParticleSystems/Gameplay/Pick-ups/P_Health.P_Health
+/Game/Effects/ParticleSystems/Weapons/RocketLauncher/Muzzle/P_Launcher_proj.P_Launcher_proj
+/Game/Blueprints/Weapons/WeapLauncher.WeapLauncher
+/Game/Blueprints/Weapons/ProjRocket3.ProjRocket3

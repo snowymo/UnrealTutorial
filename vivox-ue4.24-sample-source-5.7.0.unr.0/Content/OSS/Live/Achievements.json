@@ -1,0 +1,9 @@
+{
+	"AchievementEventName" : "TempActivateAchiement",
+	"AchievementMap" : 
+	{
+		"ACH_FRAG_SOMEONE" : 0,
+		"ACH_DIE_ONCE" : 1,
+		"ACH_FINISH_MATCH" : 2
+	}
+}

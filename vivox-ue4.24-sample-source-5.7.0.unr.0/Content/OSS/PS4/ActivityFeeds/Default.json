@@ -1,0 +1,45 @@
+{
+	"captions":
+	{
+		"en": "$USER_NAME_OR_ID posted a message"
+	},
+	"condensedCaptions":
+	{
+		"en": "$USER_NAME_OR_ID posted $STORY_COUNT messages"
+	},
+	"storyComment": "{{COMMENT}}",
+	"source":
+	{
+		"meta": "{{ONLINE_ID}}",
+		"type": "ONLINE_ID"
+	},
+	"storyType": "IN_GAME_POST",
+	"actions":
+	[
+		{
+			"type": "url",
+			"uri": "http://www.unrealengine.com",
+			"platform": "PS4",
+			"buttonCaptions":
+			{
+				"en": "unrealengine.com"
+			}
+		}
+	],
+	"targets":
+	[
+		{
+			"meta": "{{TITLE_ID}}",
+			"type": "TITLE_ID"
+		},
+		{
+			"meta": "https://de45xmedrsdbp.cloudfront.net/ps4shooterImages/sg2-470x311-737018122.jpg",
+			"type": "SMALL_IMAGE_URL",
+			"aspectRatio": "1.51:1"
+		},
+		{
+			"meta": "https://de45xmedrsdbp.cloudfront.net/ps4shooterImages/sg1-1090x613-364223524.jpg",
+			"type": "LARGE_IMAGE_URL"
+		}
+	]
+}
