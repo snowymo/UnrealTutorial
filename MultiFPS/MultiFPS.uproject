@@ -25,6 +25,10 @@
 		{
 			"Name": "AdvancedSteamSessions",
 			"Enabled": true
+		},
+		{
+			"Name": "SteamAudio",
+			"Enabled": true
 		}
 	]
 }
