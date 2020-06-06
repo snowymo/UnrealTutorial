@@ -25,9 +25,9 @@
 
 DEFINE_LOG_CATEGORY_STATIC(LogVivoxGameInstance, Log, All);
 
-#define VIVOX_VOICE_SERVER TEXT("https://GETFROMPORTAL.www.vivox.com/api2")
-#define VIVOX_VOICE_DOMAIN TEXT("GET VALUE FROM VIVOX DEVELOPER PORTAL")
-#define VIVOX_VOICE_ISSUER TEXT("GET VALUE FROM VIVOX DEVELOPER PORTAL")
+#define VIVOX_VOICE_SERVER TEXT("https://vdx5.www.vivox.com/api2")
+#define VIVOX_VOICE_DOMAIN TEXT("vdx5.vivox.com")
+#define VIVOX_VOICE_ISSUER TEXT("zhenyi9555-vr36-dev")
 
 /// Return the full name of a UEnum value as an FString
 template<typename TEnum>

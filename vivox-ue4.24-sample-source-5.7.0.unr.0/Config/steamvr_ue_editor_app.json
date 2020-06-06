@@ -1,0 +1,18 @@
+{
+	"source": "UE",
+	"applications": [
+		{
+			"app_key": "application.generated.ue.shooter-game-11590370.ue4editor.exe",
+			"launch_type": "url",
+			"url": "steam://launch/",
+			"action_manifest_path": "C:/Users/FRL/Documents/Zhenyi/UnrealTutorial/vivox-ue4.24-sample-source-5.7.0.unr.0/Config/SteamVRBindings/steamvr_manifest.json",
+			"strings":
+			{
+				"en_us":
+				{
+					"name": "Shooter Game-11590370 [UE Editor]"
+				}
+			}
+		}
+	]
+}

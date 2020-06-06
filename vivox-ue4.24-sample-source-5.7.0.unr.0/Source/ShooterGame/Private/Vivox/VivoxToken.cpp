@@ -18,7 +18,7 @@
 
 DEFINE_LOG_CATEGORY_STATIC(LogVivoxToken, Log, All);
 
-#define VIVOX_VOICE_KEY TEXT("GET VALUE FROM VIVOX DEVELOPER PORTAL")
+#define VIVOX_VOICE_KEY TEXT("crux576")
 
 void FVivoxToken::GenerateClientLoginToken(const ILoginSession& LoginSession, FString& OutToken)
 {
