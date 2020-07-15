@@ -2,7 +2,7 @@ Multisession -> https://couchlearn.com/multiplayer-sessions-in-your-unreal-engin
 
 Player Webcam -> https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html
 
-Advanced Steam Session (working with steam subsystem) -> https://www.youtube.com/watch?v=ke3kmK6bvT0
+Advanced Steam Session (working with steam subsystem) -> create session: https://www.youtube.com/watch?v=ke3kmK6bvT0 find session: https://www.youtube.com/watch?v=oO6foa5qDck
 
 # How to run VoIP project
 * Launch MultiFPS project
